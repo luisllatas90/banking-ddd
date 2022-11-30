@@ -6,6 +6,8 @@ import { AccountsModule } from './accounts/accounts.module';
 import { TransactionsModule } from './transactions/transactions.module';
 import { NotificationsModule } from './notifications/notifications.module';
 
+console.log("cccc "+process.env.ENVIRONMENT);
+
 @Module({
   imports: [
     TypeOrmModule.forRoot({
@@ -16,13 +18,13 @@ import { NotificationsModule } from './notifications/notifications.module';
       timezone: '+00:00',
       bigNumberStrings: false,
       entities: [
-        process.env.ENVIRONMENT == 'prod' ? 
+        process.env.ENVIRONMENT == 'prd' ? 
         '**/infrastructure/persistence/entities/*{.ts,.js}' : 
         'dist/**/infrastructure/persistence/entities/*{.ts,.js}'
       ],
       subscribers: [],
       migrations: [
-        process.env.ENVIRONMENT == 'prod' ? 
+        process.env.ENVIRONMENT == 'prd' ? 
         'shared/infrastructure/persistence/migrations/*{.ts,.js}' : 
         'dist/shared/infrastructure/persistence/migrations/*{.ts,.js}'
       ],
