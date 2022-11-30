@@ -6,8 +6,6 @@ import { AccountsModule } from './accounts/accounts.module';
 import { TransactionsModule } from './transactions/transactions.module';
 import { NotificationsModule } from './notifications/notifications.module';
 
-console.log("cccc "+process.env.ENVIRONMENT);
-
 @Module({
   imports: [
     TypeOrmModule.forRoot({
