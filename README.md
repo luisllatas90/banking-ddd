@@ -1,2 +1,2 @@
 # banking-ddd
-proyecto orientado a DDD
+Arquitectura hexagonal orientado a DDD (Monolito)
